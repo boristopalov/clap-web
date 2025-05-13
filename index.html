@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vector Search App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Semantic Audio & Text Search</h1>
+
+      <div class="section">
+        <h2>Embed Audio Files</h2>
+        <p>
+          Select a folder containing audio files (wav, mp3, etc.). They will be
+          embedded and stored locally.
+        </p>
+        <input
+          type="file"
+          id="audioFolderInput"
+          webkitdirectory
+          directory
+          multiple
+        />
+        <button id="embedAudioButton">Embed Audio from Folder</button>
+        <p id="audioEmbedStatus"></p>
+      </div>
+
+      <div class="section">
+        <h2>Search with Text</h2>
+        <input
+          type="text"
+          id="textSearchInput"
+          placeholder="Enter search query (e.g., 'sound of a cat')"
+        />
+        <button id="searchButton">Search</button>
+      </div>
+
+      <div class="section">
+        <h2>Search with Audio File</h2>
+        <input type="file" id="audioSearchInput" accept="audio/*" />
+        <button id="searchAudioButton">Search with Audio</button>
+      </div>
+
+      <div class="section">
+        <h2>Search Results</h2>
+        <ul id="searchResultsList"></ul>
+      </div>
+
+      <div class="section">
+        <button id="clearDbButton">Clear Vector Database</button>
+        <p id="dbStatus"></p>
+      </div>
+
+      <div class="status-panel">
+        <h3>Model Loading Status:</h3>
+        <p id="modelStatus">Models loading...</p>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
